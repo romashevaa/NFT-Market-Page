@@ -1,0 +1,2391 @@
+@import "vars";
+@import "fonts";
+html {
+  box-sizing: border-box;
+  min-width: 52px;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+input {
+  border: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-clear-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+h1.mono {
+  color: #fff;
+  font-family: "Space-Mono-Bold";
+  font-size: 67px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%; /* 73.7px */
+  text-transform: capitalize;
+}
+h1.sans {
+  color: #fff;
+  font-family: "Work-Sans-SemiBold";
+  font-size: 67px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%; /* 73.7px */
+  text-transform: capitalize;
+}
+h2.mono {
+  color: #fff;
+  font-family: "Space-Mono-Bold";
+  font-size: 51px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  text-transform: capitalize;
+}
+h2.sans {
+  color: #fff;
+  font-family: "Work-Sans-SemiBold";
+  font-size: 51px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  text-transform: capitalize;
+}
+h3.mono {
+  color: #fff;
+  font-family: "Space-Mono-Bold";
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 45.6px */
+  text-transform: capitalize;
+}
+h3.sans {
+  color: #fff;
+  font-family: "Work-Sans-SemiBold";
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 45.6px */
+  text-transform: capitalize;
+}
+h4.sans {
+  color: #fff;
+  font-family: "Work-Sans-SemiBold";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  text-transform: capitalize;
+}
+h4.mono {
+  color: #fff;
+  font-family: "Space-Mono-Bold";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%; /* 39.2px */
+  text-transform: capitalize;
+}
+h5.mono {
+  color: #fff;
+  font-family: "Space-Mono-Bold";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+  text-transform: capitalize;
+}
+h5.sans {
+  color: #fff;
+  font-family: "Work-Sans-SemiBold";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 30.8px */
+  text-transform: capitalize;
+}
+p.base-mono {
+  color: #858584;
+  font-family: "Space-Mono";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+p.base-sans {
+  color: #fff;
+  font-family: "Work-Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+p.caption-mono {
+  color: #fff;
+  font-family: "Space-Mono";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+}
+p.caption-sans {
+  color: #fff;
+  font-family: "Work-Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+
+.hide {
+  display: none;
+}
+
+// SHRINK
+.hvr-shrink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-shrink:hover,
+.hvr-shrink:focus,
+.hvr-shrink:active {
+  -webkit-transform: scale(0.92);
+  transform: scale(0.92);
+}
+
+body {
+  background-color: #2b2b2b;
+}
+
+.body-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.btn {
+  border-radius: 20px;
+  border: 2px solid #a259ff;
+
+  display: flex;
+  height: 60px;
+  padding: 0px 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  align-self: stretch;
+  color: #fff;
+  text-align: center;
+  font-family: "Work-Sans-SemiBold";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.grey {
+  color: #858584;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 5;
+}
+.show {
+  display: flex;
+}
+.container {
+  padding: 40px calc((100vw - 385px) / 2 + 30px);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #2b2b2b;
+  z-index: 6;
+  border-bottom: 1px solid #3b3b3b;
+
+  ///////////////////////////////////////////////////btn burger
+  &_menu {
+    display: block;
+  }
+  &_menubtn {
+    z-index: 8;
+  }
+  // &_menu p {
+  //   font-weight: 600;
+  // }
+  &_inner {
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &_logo_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.hero {
+  margin-top: 100px;
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  &_inner a {
+    margin: 0 auto;
+  }
+  &_article_head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &_article_button {
+    background-color: #a259ff;
+    width: 315px;
+    text-align: center;
+    font-family: "Work-Sans-SemiBold";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+  }
+  &_article_addinfo {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    color: #fff;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  &_article_addinfo_item {
+    display: flex;
+    flex-direction: column;
+  }
+  &_nft_card img {
+    width: 100%;
+  }
+  &_nft_card_img {
+    width: 100%;
+    height: auto;
+  }
+  &_nft_card_placeholder {
+    height: 109px;
+    background-color: #3b3b3b;
+    border-radius: 0px 0px 20px 20px;
+  }
+  &_nft_card_placeholder_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+  &_nft_card_placeholder_artistcard {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+  }
+}
+
+.trendingcol {
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &_headline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &_cardrow {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &_cardrow_item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  &_cardrow_item_cardrow_first,
+  &_cardrow_item_cardrow_second {
+    display: none;
+  }
+  &_cardrow_item_primpic img {
+    width: 315px;
+    height: 315px;
+  }
+  &_placeholder_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+  &_placeholder_artistcard {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+  }
+  &_info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &_card_placeholder_artistcard {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+  }
+  &_cardrow_item_secpic_items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+  }
+  &_cardrow_item_secpic_items img {
+    width: 95px;
+    height: 95px;
+  }
+  &_cardrow_secpic_item_nft {
+    border-radius: 20px;
+    background-color: #a259ff;
+    display: flex;
+    height: 95px;
+    width: 95px;
+    padding: 32px 15px;
+    color: #fff;
+    text-align: center;
+    font-family: "Space-Mono-Bold";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.toprated {
+  &_inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px 0;
+    align-items: center;
+    // justify-content: center;
+  }
+  &_headline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+    order: 1;
+  }
+  &_cardrow {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    &_item {
+      border-radius: 20px;
+      background: #3b3b3b;
+      display: flex;
+      gap: 0 20px;
+      flex-direction: row;
+      padding: 20px;
+      width: 330px;
+      height: auto;
+    }
+    &_item img {
+      height: 60px;
+      width: 60px;
+    }
+    &_list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px 0;
+      width: 100%;
+      order: 2;
+    }
+  }
+  &_btn {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  &_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    &_sales {
+      display: flex;
+      flex-direction: row;
+      gap: 0 5px;
+      align-items: flex-end;
+    }
+    &_price {
+      font-family: "Space-Mono";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      color: #fff;
+    }
+    &_salestext {
+      font-family: "Work-Sans";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+    }
+  }
+}
+
+.toprated_button,
+.more_button {
+  width: 100%;
+}
+
+.lastitem {
+  display: none;
+}
+.third {
+  display: none;
+}
+
+.ranking_number {
+  position: absolute;
+  border-radius: 20px;
+  background: #2b2b2b;
+  width: 30px;
+  height: 30px;
+  z-index: 3;
+  text-align: center;
+  padding-top: 4px;
+  color: #858584;
+  font-family: "Space-Mono";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.browse {
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 40px 0;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  &_cardrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  &_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &_card_img {
+    width: 148px;
+    height: 142px;
+    border-radius: 20px 20px 0 0;
+  }
+  &_card_name {
+    padding: 20px;
+    background-color: #3b3b3b;
+    border-radius: 0 0 20px 20px;
+    color: #fff;
+    font-family: "Work-Sans-SemiBold";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    width: 150px;
+  }
+  &_card_front {
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    padding: 31px 35px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.more {
+  &_inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    gap: 40px 0;
+    align-items: center;
+  }
+  &_headline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: stretch;
+    order: 1;
+  }
+  &_cardrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    order: 2;
+  }
+  &_cardrow_item {
+    display: flex;
+    flex-direction: column;
+    width: 315px;
+    height: 469px;
+  }
+  &_card_artistcard {
+    display: flex;
+    flex-direction: row;
+    gap: 0 12px;
+    padding-bottom: 25px;
+    padding-top: 5px;
+    align-items: center;
+  }
+  &_addinfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: stretch;
+  }
+  &_addinfo_bid p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  &_addinfo &_headline_button {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.more_card_placeholder,
+.marketplace_card_placeholder,
+.nft_card_placeholder {
+  display: flex;
+  padding: 20px 20px 25px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #3b3b3b;
+  border-radius: 0 0 20px 20px;
+  width: 100%;
+}
+
+.marketplace_card_placeholder {
+  background-color: #2b2b2b;
+}
+
+.highlight {
+  background-image: url(../images/highlight.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 590px;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  align-self: stretch;
+  &_gradient {
+    background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+    width: 100%;
+  }
+  &_inner {
+    width: 100%;
+    height: 100%;
+    padding: 120px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &_artistcard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #3b3b3b;
+    border-radius: 20px;
+    gap: 12px;
+    width: 151px;
+  }
+  &_timer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(59, 59, 59, 0.5);
+    backdrop-filter: blur(5px);
+    height: 144px;
+  }
+  &_timer_countdown {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-evenly;
+  }
+  &_timer_item {
+    display: flex;
+    flex-direction: column;
+  }
+  &_button {
+    display: flex;
+    height: 60px;
+    padding: 22px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    border-radius: 20px;
+    background-color: #fff;
+    font-family: "Work-Sans-SemiBold";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+  }
+  &_buttonsee {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+}
+
+.howitworks {
+  &_inner {
+    display: flex;
+    flex-direction: column;
+  }
+  &_headline {
+    gap: 10px;
+  }
+  &_cardrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 40px;
+    gap: 20px;
+  }
+  &_cardrow_item {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #3b3b3b;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 315px;
+  }
+  &_card_img img {
+    height: 100px;
+    width: 100px;
+  }
+  &_card_text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &_card_text p {
+    line-height: 140%;
+  }
+}
+
+.subscribe {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  &_inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  &_picture img {
+    height: 255px;
+    width: 100%;
+  }
+  &_article {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &_text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &_form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.footer p {
+  color: #cccccc;
+}
+
+.subscribe_form input,
+.footer_input {
+  padding: 16px 20px;
+  height: 46px;
+  border-radius: 20px;
+  border: 1px solid #858584;
+}
+
+.subscribe_button,
+.footer_button {
+  background-color: #a259ff;
+  height: 46px;
+}
+
+.createacc {
+  margin-top: 100px;
+  &_main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &_img {
+    background-image: url(../images/createaccimg.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 232px;
+    overflow: hidden;
+    z-index: 0;
+    display: flex;
+    align-self: stretch;
+  }
+  &_main {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+  }
+  &_header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  &_form input {
+    padding: 16px 20px 16px 52px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-start;
+    border-radius: 20px;
+    border: none;
+    color: #2b2b2b;
+    font-family: "Work-Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  &_button {
+    background-color: #a259ff;
+    height: 46px;
+    margin: 0 auto;
+  }
+  &_form input,
+  &_button {
+    height: 46px;
+    width: 315px;
+  }
+}
+#nameicon {
+  background-image: url(../images/formuser.svg);
+  background-repeat: no-repeat;
+  background-position: 15px 13px;
+}
+
+#emailicon {
+  background-image: url(../images/formemail.svg);
+  background-repeat: no-repeat;
+  background-position: 15px 13px;
+}
+
+#passicon {
+  background-image: url(../images/formpass.svg);
+  background-repeat: no-repeat;
+  background-position: 15px 13px;
+}
+
+.connectwallet {
+  margin-top: 100px;
+  &_main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &_img {
+    background-image: url(../images/connectwallimg.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 232px;
+    overflow: hidden;
+    z-index: 0;
+    display: flex;
+    align-self: stretch;
+  }
+  &_main {
+    padding: 30px 30px 40px 30px;
+    display: flex;
+    align-items: center;
+  }
+  &_header {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_button {
+    padding: 0 20px 0 40px;
+    display: flex;
+    justify-content: flex-start;
+    height: 60px;
+    width: 320px;
+    background-color: #3b3b3b;
+    font-size: 20px;
+    gap: 20px;
+  }
+}
+
+.coverimg {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &_bg {
+    background-image: url(../images/top-slider.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 250px;
+    overflow: hidden;
+    z-index: 0;
+    display: flex;
+    align-self: stretch;
+  }
+  &_gradient {
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+    width: 100%;
+  }
+  &_placeholder {
+    position: absolute;
+    margin-top: 190px;
+  }
+  &_placeholder img {
+    height: 120px;
+    width: 120px;
+    border: 2px solid #2b2b2b;
+    border-radius: 20px;
+  }
+}
+
+.artistinfo {
+  padding: 80px 30px 30px 30px;
+  &_inner {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &_article_addinfo {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    color: #fff;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_buttons a {
+    height: 60px;
+    width: 315px;
+  }
+  &_socials {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  &_socials img {
+    width: 24px;
+    height: 24px;
+  }
+  &_bio,
+  &_links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.tabbar {
+  padding-top: 10px;
+  &_inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-top: 1px solid #3b3b3b;
+    gap: 15px;
+    padding-top: 0;
+  }
+  &_inner_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 105px;
+  }
+  &_inner_item p {
+    display: none;
+  }
+  &_inner_item h5 {
+    font-size: 16px;
+    color: #858584;
+  }
+}
+
+.activetab {
+  border-bottom: 2px solid #858584;
+}
+.activetab h5 {
+  color: #fff;
+}
+
+.artist_cardrow,
+.marketplace_cardrow {
+  padding: 80px 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+.marketplace_cardrow,
+.artist_cardrow {
+  background-color: #3b3b3b;
+  border-bottom: 2px solid #2b2b2b;
+}
+
+.secondrow,
+.thirdrow {
+  display: none;
+}
+
+.placeholderimg {
+  margin-top: 100px;
+  background-image: url(../images/nftpage/nft-topslider.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 320px;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  align-self: stretch;
+}
+
+.nftartistinfo {
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_headline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &_timer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(59, 59, 59, 0.5);
+    backdrop-filter: blur(5px);
+    height: 234px;
+  }
+  &_timer_countdown {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-evenly;
+  }
+  &_timer_item {
+    display: flex;
+    flex-direction: column;
+  }
+  &_button {
+    margin-top: 20px;
+    background-color: #a259ff;
+  }
+  &_artistcard,
+  &_description,
+  &_details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &_details a {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  &_card {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+  &_tag,
+  &_tags {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_tag a {
+    padding: 0 30px;
+    background-color: #3b3b3b;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    font-family: "Work-Sans-SemiBold";
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    text-transform: uppercase;
+  }
+}
+
+.nftartistinfo_tag a,
+.howitworks_card_text h5 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 22.4px */
+}
+
+.morenft {
+  &_inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+  &_cardrow {
+    // padding: 80px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+  }
+  &_inner h4 {
+    order: 1;
+  }
+  &_cardrow {
+    order: 2;
+  }
+  &_inner a {
+    order: 3;
+  }
+}
+
+.marketplace,
+.topcreators {
+  margin-top: 100px;
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &_headline h4 {
+    margin-bottom: 10px;
+  }
+  &_search {
+    padding: 12px 20px;
+    border-radius: 20px;
+    height: 60px;
+    border: 1px solid #3b3b3b;
+    background-color: #2b2b2b;
+    background-image: url(../images/search.svg);
+    background-repeat: no-repeat;
+    background-position: 270px 16px;
+    width: 315px;
+    color: #fff;
+    font-family: "Work-Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
+
+.rankings {
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_header p {
+    color: #858584;
+  }
+  &_table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_table_item {
+    background-color: #3b3b3b;
+    border: none;
+  }
+  &_header {
+    border: 1px solid #3b3b3b;
+  }
+  &_header,
+  &_table_item {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 20px;
+    align-items: center;
+    gap: 10px;
+  }
+  &_table_artist {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+  }
+  &_table_artist img {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.table {
+  &_num {
+    // flex: 1;
+    text-align: center;
+    padding-top: 3px;
+    padding-left: 1px;
+  }
+  &_name {
+    flex: 9;
+  }
+  &_price {
+    flex: 4;
+  }
+  &_change {
+    display: none;
+  }
+  &_sold {
+    display: none;
+  }
+}
+
+.scrollup {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  color: #858584;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 1px #fff;
+  opacity: 0;
+  transition: 0.2s;
+  transform: translateY(25px);
+  overflow: hidden;
+}
+
+.scrollup::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  content: "🡱";
+  padding-bottom: 4px;
+  background-color: #2b2b2b;
+  transition: background-color 0.2s;
+  z-index: -1;
+}
+
+.scrollup:hover::before {
+  background-color: #2b2b2b;
+}
+
+.scrollup:hover {
+  color: #a259ff;
+}
+
+.scrollup--active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scrollup_path {
+  box-sizing: border-box;
+  fill: none;
+  stroke: #a259ff;
+  stroke-width: 4px;
+  transition: 0.2s;
+}
+
+.footer {
+  margin: 0 auto;
+  background-color: #3b3b3b;
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-bottom: 1px solid #858584;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+  }
+  &_socials,
+  &_explore,
+  &_form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_socialpics {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  &_text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &_input,
+  &_button {
+    width: 315px;
+    height: 46px;
+  }
+}
+
+.footer_input,
+.subscribe_input {
+  font-family: "Work-Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+// @media (min-width: 530px) {
+//   .container {
+//     padding: 40px 100px;
+//   }
+// }
+
+// @media (min-width: 650px) {
+//   .container {
+//     padding: 40px 170px;
+//   }
+// }
+.header_menu {
+  padding: 20px 0 0 20px;
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  background-color: #3b3b3b;
+  top: 0%;
+  right: -47%;
+  height: 500vh;
+  border-left: 1px solid #858584;
+  border-top: 1px solid #858584;
+  transition: transform 0.8s;
+}
+.header_menuitem {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: fit-content;
+}
+.header_menuitem p {
+  font-weight: 400;
+}
+.header_menuitem_button {
+  height: fit-content;
+  align-self: flex-start;
+  padding: 5px 10px;
+}
+.header_menuitem_button img,
+.header_menu img {
+  height: 24px;
+  width: 24px;
+}
+.header_join {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header_menu.open {
+  transform: translateX(-100%);
+}
+
+@media (min-width: 100px) {
+  .container {
+    padding: 40px calc((100vw - 385px) / 2 + 30px);
+  }
+}
+
+@media (min-width: 834px) {
+  p.caption-mono {
+    // font-size: 16px;
+    line-height: 140%;
+    color: #858584;
+  }
+  .container {
+    padding: 40px calc((100vw - 834px) / 2 + 72px);
+  }
+  .header {
+    &_inner {
+      padding: 15px 50px;
+    }
+  }
+  .hero {
+    &_inner {
+      padding: 40px 0;
+      display: grid;
+      justify-content: space-evenly;
+      align-items: normal;
+      grid-template-columns: repeat(2, 330px);
+      grid-template-rows: 224px auto 77px;
+      column-gap: 30px;
+      row-gap: 20px;
+      grid-template-areas:
+        "article card"
+        "button card"
+        "addinfo card";
+    }
+    &_inner a {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0 40px;
+    }
+    &_article_head h4 {
+      font-size: 38px;
+      line-height: 120%;
+    }
+    &_article_head {
+      gap: 20px;
+      grid-area: article;
+    }
+    &_nft_card {
+      height: 330px;
+      width: 330px;
+      grid-area: card;
+    }
+    &_article_button {
+      margin-left: 0;
+      width: 224px;
+      grid-area: button;
+    }
+    &_article_addinfo {
+      justify-content: normal;
+      grid-area: addinfo;
+    }
+    &_article {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .trendingcol_cardrow_item_cardrow_first {
+    display: flex;
+  }
+  .toprated {
+    &_inner {
+      justify-content: space-between;
+    }
+    &_btn {
+      display: flex;
+      justify-content: end;
+      width: auto;
+    }
+    &_button,
+    .more_button {
+      order: 2;
+      width: 260px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+    }
+    &_cardrow_list {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 25px;
+      justify-content: center;
+      order: 3;
+    }
+  }
+  .lastitem {
+    display: flex;
+  }
+  .browse {
+    &_card_img {
+      width: 150px;
+      height: 142px;
+    }
+  }
+
+  .more {
+    &_inner {
+      justify-content: space-between;
+    }
+    &_cardrow_item {
+      width: 330px;
+      height: 469px;
+    }
+    &_headline_button {
+      order: 2;
+      width: 247px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+    }
+    &_cardrow {
+      order: 3;
+      width: 100%;
+    }
+  }
+
+  .cardrow_img {
+    width: 330px;
+    height: 295px;
+  }
+  .splide {
+    width: 690px;
+  }
+
+  .highlight {
+    &_inner {
+      padding: 360px 0 60px 0;
+      width: 100%;
+      display: grid;
+      justify-content: space-between;
+      align-items: normal;
+      // grid-template-columns: 600px 295px;
+      grid-template-rows: 44px 46px 60px;
+      column-gap: auto;
+      row-gap: 30px;
+      grid-template-areas:
+        "artist artist"
+        "name timer"
+        "button timer";
+    }
+    &_artistcard {
+      grid-area: artist;
+    }
+    &_name {
+      grid-area: name;
+    }
+    &_button {
+      width: 200px;
+      grid-area: button;
+    }
+    &_timer {
+      grid-area: timer;
+    }
+    &_timer p {
+      color: #fff;
+    }
+    &_timer_item p {
+      color: #fff;
+    }
+  }
+
+  .howitworks {
+    &_cardrow {
+      gap: 30px;
+    }
+    &_cardrow_item {
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      width: 210px;
+    }
+    &_card_img img {
+      height: 160px;
+      width: 160px;
+    }
+  }
+  .subscribe {
+    &_inner {
+      padding: 40px 30px;
+      border-radius: 20px;
+      background-color: #3b3b3b;
+    }
+    &_picture img {
+      height: 280px;
+      width: 100%;
+    }
+  }
+  .footer {
+    &_input,
+    &_button {
+      height: 60px;
+    }
+    &_input {
+      width: 420px;
+      height: 60px;
+    }
+    &_button img {
+      display: none;
+    }
+    &_button {
+      position: absolute;
+      width: 179px;
+      margin-left: 241px;
+      margin-top: 102px;
+    }
+  }
+  .createacc {
+    &_inner {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+    }
+    &_main {
+      padding: 80px 72px 80px 0;
+      align-items: flex-start;
+    }
+    &_img {
+      width: 100%;
+    }
+    &_button {
+      margin-left: 0;
+    }
+    &_form input,
+    &_button {
+      height: 46px;
+      width: 280px;
+    }
+  }
+  .connectwallet {
+    &_inner {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+    }
+    &_main {
+      padding: 80px 72px 80px 0;
+      align-items: flex-start;
+    }
+    &_img {
+      width: 100%;
+    }
+    &_button {
+      margin-left: 0;
+    }
+    &_form input,
+    &_button {
+      height: 46px;
+      width: 280px;
+    }
+  }
+
+  .coverimg {
+    &_bg {
+      height: 280px;
+    }
+    &_placeholder {
+      margin-top: 220px;
+      margin-right: 580px;
+    }
+  }
+
+  .artistinfo {
+    &_inner h4 {
+      font-size: 38px;
+    }
+    &_buttons {
+      flex-direction: row;
+    }
+    &_buttons a {
+      width: 186px;
+    }
+    &_article_addinfo_item {
+      width: 156px;
+    }
+  }
+
+  .tabbar {
+    &_inner {
+      gap: 40px;
+    }
+    &_inner_item {
+      gap: 12px;
+      width: 150px;
+    }
+    &_inner_item p {
+      display: flex;
+      padding: 10px;
+      border-radius: 20px;
+      background: #3b3b3b;
+    }
+  }
+
+  .secondrow {
+    display: flex;
+  }
+
+  .placeholderimg {
+    height: 420px;
+  }
+
+  .nftartistinfo {
+    &_inner {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 365px auto;
+      column-gap: 30px;
+      row-gap: 30px;
+      justify-content: space-between;
+      grid-template-areas:
+        "headline timer"
+        "artist timer"
+        "description timer"
+        "details timer"
+        "tags timer";
+    }
+    &_headline {
+      grid-area: headline;
+    }
+    &_timer {
+      grid-area: timer;
+    }
+    &_artistcard {
+      grid-area: artist;
+    }
+    &_description {
+      grid-area: description;
+    }
+    &_details {
+      grid-area: details;
+    }
+    &_tag {
+      grid-area: tags;
+    }
+  }
+  .morenft {
+    &_inner {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &_cardrow {
+      // padding: 80px 30px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    &_inner h4 {
+      order: 1;
+    }
+    &_cardrow {
+      order: 3;
+    }
+    &_inner a {
+      order: 2;
+    }
+  }
+  .marketplace {
+    &_headline h4 {
+      font-size: 38px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 45.6px */
+      text-transform: capitalize;
+    }
+    &_search {
+      width: 680px;
+      background-position: 635px 16px;
+    }
+  }
+  .rankings {
+    &_header p {
+      font-size: 16px;
+      line-height: 140%;
+    }
+    &_table_artist p {
+      font-size: 22px;
+      font-weight: 600;
+      font-family: "Work-Sans-SemiBold";
+    }
+    &_table_item {
+      height: 60px;
+    }
+  }
+
+  .table {
+    &_num {
+      // flex: 1;
+      font-size: 16px;
+    }
+    &_name {
+      flex: 12;
+      font-size: 16px;
+    }
+    &_price {
+      text-decoration: none;
+      flex: 4;
+    }
+    &_change {
+      flex: 4;
+      display: flex;
+    }
+    &_sold {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .overlay {
+    display: none;
+  }
+  .container {
+    padding: 40px calc((100vw - 1280px) / 2 + 115px);
+  }
+  .header {
+    &_inner {
+      padding: 20px 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &_article_head {
+      display: block;
+    }
+    &_storefrontimg {
+      height: 32px;
+      width: 32px;
+    }
+    &_marketplaceimg {
+      height: 20px;
+      width: 200px;
+    }
+    &_menubtn {
+      display: none;
+    }
+    &_menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 50px;
+      background: none;
+      border: none;
+      flex-direction: row;
+      height: 60px;
+      position: relative;
+      padding: 0;
+      width: 607px;
+      right: 0;
+    }
+    &_menu.open {
+      transform: none;
+    }
+    &_menu a {
+      color: #fff;
+    }
+    // &_menuitem {
+    //   text-align: center;
+    //   font-family: "Work-Sans";
+    //   font-size: 16px;
+    //   color: #fff;
+    //   font-style: normal;
+
+    //   line-height: 140%;
+    // }
+    &_menuitem img {
+      display: none;
+    }
+    &_menuitem p {
+      font-weight: 600;
+    }
+    &_join {
+      display: none;
+    }
+    &_menuitem_button {
+      background-color: #a259ff;
+      height: 60px;
+      width: 152px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    &_menuitem_button p {
+      font-weight: 600;
+    }
+  }
+  .hero {
+    &_inner {
+      margin: 0 auto;
+      height: auto;
+      grid-template-columns: repeat(2, 510px);
+      grid-template-rows: 347px auto auto;
+      row-gap: 30px;
+      align-items: start;
+      justify-content: space-between;
+    }
+    &_article_head h4 {
+      font-size: 67px;
+      line-height: 110%;
+    }
+    &_article_head p {
+      font-size: 22px;
+      line-height: 160%;
+    }
+    &_nft_card {
+      height: 100%;
+      width: auto;
+    }
+    &_article_addinfo_item h5 {
+      font-size: 28px;
+    }
+    &_article_addinfo_item p {
+      font-size: 24px;
+    }
+  }
+  .trendingcol {
+    &_headline h4 {
+      font-size: 38px;
+    }
+    &_headline p {
+      font-size: 22px;
+    }
+  }
+  .trendingcol_cardrow_item_cardrow_second {
+    display: flex;
+  }
+  .second {
+    display: flex;
+  }
+  .toprated {
+    &_cardrow_item {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      height: 240px;
+      width: 240px;
+      justify-content: center;
+      gap: 20px 0;
+    }
+    &_cardrow_item img {
+      height: 120px;
+      width: 120px;
+    }
+    &_info_sales {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  .ranking_number {
+    margin-right: 170px;
+    margin-bottom: 170px;
+  }
+  .third {
+    display: flex;
+  }
+  .browse {
+    &_card_img {
+      width: 240px;
+      height: 240px;
+    }
+    &_card_front {
+      padding: 60px;
+      width: 240px;
+      height: 240px;
+      display: block;
+      margin: 0 auto;
+    }
+    &_card_name {
+      width: 240px;
+    }
+  }
+  .splide {
+    width: 1050px;
+  }
+  .toprated_headline h4,
+  .more_headline_text h4,
+  .browse_inner h4 {
+    font-size: 38px;
+    line-height: 120%;
+  }
+  .toprated_headline p,
+  .more_headline_text p {
+    font-size: 22px;
+    line-height: 160%;
+  }
+  .howitworks {
+    &_card_text p {
+      font-size: 16px;
+      line-height: 140%;
+    }
+    // &_cardrow_item {
+    //   height: fit-content;
+    // }
+    &_card_img img {
+      height: 250px;
+      width: 250px;
+    }
+    &_card_text h5 {
+      font-size: 22px;
+    }
+  }
+  .highlight_inner h3.sans {
+    font-size: 51px;
+  }
+  .subscribe {
+    &_inner {
+      padding: 60px;
+      border-radius: 20px;
+      background-color: #3b3b3b;
+      gap: 80px;
+    }
+    &_picture img {
+      height: 310px;
+      width: 100%;
+    }
+    &_button,
+    &_form input {
+      height: 60px;
+    }
+    &_button {
+      position: absolute;
+      align-self: flex-end;
+    }
+  }
+  .footer {
+    &_inner {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &_text {
+      width: 330px;
+    }
+    &_button {
+      margin-top: 124px;
+    }
+  }
+  .createacc {
+    padding-top: 0;
+    padding-bottom: 0;
+    &_img {
+      flex: 60%;
+    }
+    &_main {
+      flex: 40%;
+    }
+    &_header h3 {
+      font-size: 51px;
+      line-height: 110%;
+    }
+    &_header p {
+      font-size: 22px;
+      line-height: 160%;
+    }
+    &_inner {
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
+    }
+    &_main {
+      padding: 100px 150px 100px 0;
+    }
+    &_form input,
+    &_button {
+      width: 330px;
+    }
+  }
+  .connectwallet {
+    padding-top: 0;
+    padding-bottom: 0;
+    &_img {
+      flex: 55%;
+    }
+    &_main {
+      flex: 45%;
+    }
+    &_header h3 {
+      font-size: 51px;
+      line-height: 110%;
+    }
+    &_header p {
+      font-size: 22px;
+      line-height: 160%;
+    }
+    &_inner {
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
+    }
+    &_main {
+      padding: 100px 150px 100px 0;
+    }
+    &_button {
+      height: 72px;
+    }
+  }
+  .coverimg {
+    &_bg {
+      height: 320px;
+    }
+    &_placeholder {
+      margin-top: 260px;
+      margin-right: 930px;
+    }
+  }
+
+  .artistinfo {
+    &_inner {
+      display: grid;
+      grid-template-columns: 599px 351px;
+      grid-template-rows: 56px 74px 80px 77px;
+      row-gap: 30px;
+      column-gap: 100px;
+      grid-template-areas:
+        "name buttons"
+        "stats stats"
+        "bio bio"
+        "links links";
+    }
+    &_inner h4 {
+      font-size: 51px;
+    }
+    &_buttons {
+      flex-direction: row;
+      grid-area: buttons;
+    }
+    &_buttons a {
+      width: 186px;
+    }
+    &_article_addinfo_item {
+      grid-area: stats;
+      width: 156px;
+    }
+    &_article_addinfo_item h5 {
+      font-size: 28px;
+    }
+    &_article_addinfo_item p {
+      font-size: 22px;
+    }
+    &_bio {
+      grid-area: bio;
+    }
+    &_bio p {
+      font-size: 22px;
+    }
+    &_links {
+      grid-area: links;
+    }
+    &_links p {
+      font-size: 22px;
+    }
+    &_socials img {
+      height: 32px;
+      width: 32px;
+    }
+  }
+  .tabbar {
+    &_inner {
+      gap: 50px;
+    }
+    &_inner_item {
+      width: 250px;
+    }
+    &_inner_item h5 {
+      font-size: 22px;
+    }
+    &_inner_item p {
+      font-size: 16px;
+    }
+  }
+  .thirdrow {
+    display: flex;
+  }
+  .placeholderimg {
+    height: 560px;
+  }
+  .nftartistinfo {
+    &_inner {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 605px auto;
+      column-gap: 150px;
+      row-gap: 30px;
+      justify-content: space-between;
+      grid-template-areas:
+        "headline timer"
+        "artist timer"
+        "description timer"
+        "details timer"
+        "tags timer";
+    }
+    &_headline {
+      grid-area: headline;
+    }
+    &_headline h4 {
+      font-size: 51px;
+    }
+    &_headline p,
+    &_artistcard p,
+    &_description p,
+    &_details p,
+    &_tag p {
+      font-size: 22px;
+    }
+    &_weblink img {
+      height: 32px;
+      width: 32px;
+    }
+    &_tags {
+      flex-direction: row;
+    }
+    &_timer {
+      grid-area: timer;
+    }
+    &_artistcard {
+      grid-area: artist;
+    }
+    &_description {
+      grid-area: description;
+    }
+    &_details {
+      grid-area: details;
+    }
+    &_tag {
+      grid-area: tags;
+    }
+  }
+  .marketplace {
+    &_headline h4 {
+      font-size: 51px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 110%; /* 45.6px */
+      text-transform: capitalize;
+    }
+    &_headline p {
+      font-size: 22px;
+      line-height: 160%;
+    }
+    &_search {
+      width: 1050px;
+      background-position: 1000px 16px;
+    }
+  }
+  .rankings {
+    &_header,
+    &_table_item {
+      gap: 20px;
+    }
+    &_header p {
+      font-size: 16px;
+      line-height: 140%;
+    }
+    &_table_artist p {
+      font-size: 22px;
+      font-weight: 600;
+      font-family: "Work-Sans-SemiBold";
+    }
+    &_table_item img {
+      height: 60px;
+      width: 60px;
+    }
+    &_table_item {
+      height: 84px;
+    }
+  }
+
+  .table {
+    &_num {
+      font-size: 16px;
+      align-self: center;
+      border-radius: 20px;
+      background-color: #2b2b2b;
+      width: fit-content;
+      justify-self: center;
+      height: 30px;
+      width: 30px;
+    }
+    &_name {
+      flex: 8;
+      font-size: 16px;
+    }
+    &_price {
+      text-decoration: none;
+      flex: 3;
+    }
+    &_change {
+      flex: 3;
+      display: flex;
+    }
+    &_sold {
+      flex: 3;
+      display: flex;
+    }
+  }
+}
+
+.atropos-scale,
+.atropos-rotate,
+.atropos-inner,
+.more_card {
+  overflow: visible;
+  position: relative;
+}
+
+.atropos-inner {
+  border-radius: 20px;
+}
+
+#more_card,
+.more_card {
+  display: flex;
+  flex-direction: column;
+}
